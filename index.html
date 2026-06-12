@@ -11,7 +11,7 @@
 html { scroll-behavior:smooth; }
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #134E4A;
+  color: #1f2920;
   background: #fff;
   -webkit-font-smoothing: antialiased;
 }
@@ -25,7 +25,7 @@ body {
 
 /* ===== TOPBAR ===== */
 .topbar {
-  background: #0D9488;
+  background: #50762b;
   color: #fff;
   font-size: 0.82rem;
   padding: 0.45rem 0;
@@ -38,7 +38,7 @@ body {
 .topbar span { display: inline-flex; align-items: center; gap: 0.4rem; }
 .badge-24h {
   background: #fff;
-  color: #0D9488;
+  color: #50762b;
   font-weight: 700;
   font-size: 0.6rem;
   padding: 0.15rem 0.55rem;
@@ -61,7 +61,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 8px rgba(13,148,136,0.06);
+  box-shadow: 0 1px 8px rgba(80,118,43,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -70,17 +70,17 @@ header {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
-  color: #0D9488;
+  color: #50762b;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 .logo img { height: 42px; width: auto; display: block; }
-.logo small { font-weight: 400; font-size: 0.6rem; display: block; color: #94A3B8; }
+.logo small { font-weight: 400; font-size: 0.6rem; display: block; color: #7a8075; }
 nav { display: flex; align-items: center; gap: 1.8rem; }
 nav a {
-  color: #64748B;
+  color: #5a6055;
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 600;
@@ -94,24 +94,24 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #0D9488;
+  background: #50762b;
   transition: width var(--normal) var(--ease-out);
 }
-nav a:hover { color: #0D9488; }
+nav a:hover { color: #50762b; }
 nav a:hover::after { width: 100%; }
 .header-actions { display: flex; align-items: center; gap: 1rem; }
 .select-region {
-  background: #F0FDFA;
-  border: 1px solid #CCFBF1;
+  background: #FBF5F2;
+  border: 1px solid #d8eac4;
   border-radius: 8px;
   padding: 0.4rem 0.8rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
-  color: #134E4A;
+  color: #1f2920;
   cursor: pointer;
 }
 .btn-wpp {
-  background: #0D9488;
+  background: #50762b;
   color: #fff;
   padding: 0.5rem 1.2rem;
   border-radius: 30px;
@@ -125,9 +125,9 @@ nav a:hover::after { width: 100%; }
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-wpp:hover { background: #0F766E; }
+.btn-wpp:hover { background: #3d5a20; }
 .btn-wpp:active, .btn-primary:active, .btn-outline:active { transition-duration: var(--fast); transform: scale(0.97); }
-.mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #134E4A; }
+.mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #1f2920; }
 
 /* ===== CAROUSEL ===== */
 .carousel {
@@ -195,7 +195,7 @@ nav a:hover::after { width: 100%; }
 /* ===== HERO ===== */
 .hero {
   background:
-    linear-gradient(135deg, rgba(15,118,110,0.85) 0%, rgba(13,148,136,0.78) 50%, rgba(15,118,110,0.85) 100%),
+    linear-gradient(135deg, rgba(61,90,32,0.88) 0%, rgba(80,118,43,0.82) 50%, rgba(61,90,32,0.88) 100%),
     url('/images/lopesimagens.png') center center / cover no-repeat;
   padding: 3rem 5% 4rem;
   display: flex;
@@ -230,7 +230,7 @@ nav a:hover::after { width: 100%; }
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.78rem;
-  color: #5EEAD4;
+  color: #8ab86a;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
@@ -244,8 +244,8 @@ nav a:hover::after { width: 100%; }
   height: 1px;
   max-width: 40px;
 }
-.hero-text .tagline::before { background: linear-gradient(90deg, transparent, #5EEAD4); }
-.hero-text .tagline::after { background: linear-gradient(90deg, #5EEAD4, transparent); }
+.hero-text .tagline::before { background: linear-gradient(90deg, transparent, #8ab86a); }
+.hero-text .tagline::after { background: linear-gradient(90deg, #8ab86a, transparent); }
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
@@ -255,7 +255,7 @@ nav a:hover::after { width: 100%; }
   margin-bottom: 0.6rem;
 }
 .hero-text h1 .accent {
-  color: #5EEAD4;
+  color: #8ab86a;
   background: none;
   -webkit-text-fill-color: unset;
 }
@@ -282,7 +282,7 @@ nav a:hover::after { width: 100%; }
 .hero-badge.gold { border-color: #FCD34D; background: rgba(252,211,77,0.15); }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
-  background: linear-gradient(135deg, #0D9488, #0F766E);
+  background: linear-gradient(135deg, #50762b, #3d5a20);
   color: #fff;
   padding: 0.9rem 2rem;
   border-radius: 30px;
@@ -293,10 +293,10 @@ nav a:hover::after { width: 100%; }
   align-items: center;
   gap: 0.6rem;
   transition: transform var(--normal) var(--ease-out), box-shadow var(--normal) var(--ease-out);
-  box-shadow: 0 4px 15px rgba(13,148,136,0.25);
+  box-shadow: 0 4px 15px rgba(80,118,43,0.25);
   cursor: pointer;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13,148,136,0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(80,118,43,0.3); }
 .hero-actions .btn-primary {
   background: linear-gradient(135deg, #F59E0B, #D97706);
   box-shadow: 0 4px 20px rgba(245,158,11,0.35);
@@ -308,8 +308,8 @@ nav a:hover::after { width: 100%; }
   50% { box-shadow: 0 4px 35px rgba(245,158,11,0.5); }
 }
 .btn-outline {
-  border: 2px solid #CCFBF1;
-  color: #134E4A;
+  border: 2px solid #d8eac4;
+  color: #1f2920;
   padding: 0.9rem 2rem;
   border-radius: 30px;
   text-decoration: none;
@@ -321,7 +321,7 @@ nav a:hover::after { width: 100%; }
   transition: border-color var(--normal) var(--ease-out), color var(--normal) var(--ease-out), transform var(--fast) var(--ease-out);
   cursor: pointer;
 }
-.btn-outline:hover { border-color: #0D9488; color: #0D9488; }
+.btn-outline:hover { border-color: #50762b; color: #50762b; }
 
 /* ===== TRUST ===== */
 .trust {
@@ -331,16 +331,16 @@ nav a:hover::after { width: 100%; }
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
-  border-top: 1px solid #F0FDFA;
+  border-top: 1px solid #FBF5F2;
 }
 .trust-item { text-align: center; }
 .trust-item .num {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 1.8rem;
-  color: #0D9488;
+  color: #50762b;
 }
-.trust-item .label { font-size: 0.85rem; color: #64748B; margin-top: 0.1rem; }
+.trust-item .label { font-size: 0.85rem; color: #5a6055; margin-top: 0.1rem; }
 .trust-item .stars { color: #F59E0B; font-size: 1rem; letter-spacing: 2px; }
 
 /* ===== SECTION ===== */
@@ -349,19 +349,19 @@ nav a:hover::after { width: 100%; }
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 2rem;
-  color: #134E4A;
+  color: #1f2920;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 .section-sub {
   text-align: center;
-  color: #64748B;
+  color: #5a6055;
   font-size: 1rem;
   max-width: 600px;
   margin: 0 auto 3rem;
   line-height: 1.6;
 }
-.section.light { background: #F0FDFA; }
+.section.light { background: #FBF5F2; }
 
 /* ===== SERVICES ===== */
 .services-grid {
@@ -377,7 +377,7 @@ nav a:hover::after { width: 100%; }
   padding: 1.6rem 1.4rem;
   text-align: center;
   transition: transform var(--slow) var(--ease-out), box-shadow var(--slow) var(--ease-out), border-color var(--slow) var(--ease-out);
-  border: 1px solid #F0FDFA;
+  border: 1px solid #FBF5F2;
   position: relative;
   overflow: hidden;
   cursor: default;
@@ -387,31 +387,31 @@ nav a:hover::after { width: 100%; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #0D9488, #14B8A6);
+  background: linear-gradient(90deg, #50762b, #6a9a3a);
   opacity: 0;
   transition: opacity var(--slow) var(--ease-out);
 }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,148,136,0.1); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(80,118,43,0.1); }
 .service-card:hover::before { opacity: 1; }
 .service-icon {
   width: 52px; height: 52px;
   margin: 0 auto 1rem;
-  background: #F0FDFA;
+  background: #FBF5F2;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease;
 }
-.service-card:hover .service-icon { background: #CCFBF1; }
+.service-card:hover .service-icon { background: #d8eac4; }
 .service-card .service-icon { transition: background var(--normal) var(--ease-out); }
-.service-card h3 { font-size: 1rem; font-weight: 700; color: #134E4A; margin-bottom: 0.35rem; }
-.service-card p { font-size: 0.82rem; color: #64748B; line-height: 1.5; }
+.service-card h3 { font-size: 1rem; font-weight: 700; color: #1f2920; margin-bottom: 0.35rem; }
+.service-card p { font-size: 0.82rem; color: #5a6055; line-height: 1.5; }
 .service-card .tag {
   display: inline-block;
   margin-top: 0.6rem;
-  background: #F0FDFA;
-  color: #0D9488;
+  background: #FBF5F2;
+  color: #50762b;
   font-weight: 600;
   font-size: 0.68rem;
   padding: 0.2rem 0.8rem;
@@ -430,7 +430,7 @@ nav a:hover::after { width: 100%; }
 .how-step .num {
   width: 56px; height: 56px;
   margin: 0 auto 1rem;
-  background: linear-gradient(135deg, #0D9488, #14B8A6);
+  background: linear-gradient(135deg, #50762b, #6a9a3a);
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
@@ -440,8 +440,8 @@ nav a:hover::after { width: 100%; }
   align-items: center;
   justify-content: center;
 }
-.how-step h3 { font-size: 1.05rem; font-weight: 700; color: #134E4A; margin-bottom: 0.4rem; }
-.how-step p { font-size: 0.88rem; color: #64748B; line-height: 1.6; }
+.how-step h3 { font-size: 1.05rem; font-weight: 700; color: #1f2920; margin-bottom: 0.4rem; }
+.how-step p { font-size: 0.88rem; color: #5a6055; line-height: 1.6; }
 
 /* ===== SEGMENTS ===== */
 .seg-grid {
@@ -456,11 +456,11 @@ nav a:hover::after { width: 100%; }
   border-radius: 16px;
   padding: 2rem 1.5rem;
   text-align: center;
-  border: 1px solid #F0FDFA;
+  border: 1px solid #FBF5F2;
   transition: transform var(--slow) var(--ease-out), box-shadow var(--slow) var(--ease-out);
   cursor: default;
 }
-.seg-card:hover { box-shadow: 0 8px 30px rgba(13,148,136,0.08); }
+.seg-card:hover { box-shadow: 0 8px 30px rgba(80,118,43,0.08); }
 .seg-card .seg-icon {
   width: 60px; height: 60px;
   margin: 0 auto 1rem;
@@ -469,13 +469,13 @@ nav a:hover::after { width: 100%; }
   align-items: center;
   justify-content: center;
 }
-.seg-card h3 { font-size: 1rem; font-weight: 700; color: #134E4A; }
-.seg-card p { font-size: 0.84rem; color: #64748B; margin-top: 0.4rem; line-height: 1.5; }
+.seg-card h3 { font-size: 1rem; font-weight: 700; color: #1f2920; }
+.seg-card p { font-size: 0.84rem; color: #5a6055; margin-top: 0.4rem; line-height: 1.5; }
 
 /* ===== FAQ ===== */
 .faq-list { max-width: 700px; margin: 0 auto; }
 .faq-item {
-  background: #F0FDFA;
+  background: #FBF5F2;
   border-radius: 12px;
   margin-bottom: 0.6rem;
   overflow: hidden;
@@ -484,7 +484,7 @@ nav a:hover::after { width: 100%; }
   padding: 1rem 1.4rem;
   font-weight: 600;
   font-size: 0.92rem;
-  color: #134E4A;
+  color: #1f2920;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -492,15 +492,15 @@ nav a:hover::after { width: 100%; }
   transition: background 0.2s ease;
   user-select: none;
 }
-.faq-q:hover { background: #CCFBF1; }
-.faq-q .arrow { transition: transform var(--normal) var(--ease-out); font-size: 0.7rem; color: #0D9488; }
+.faq-q:hover { background: #d8eac4; }
+.faq-q .arrow { transition: transform var(--normal) var(--ease-out); font-size: 0.7rem; color: #50762b; }
 .faq-item.active .faq-q .arrow { transform: rotate(180deg); }
 .faq-a {
   max-height: 0;
   padding: 0 1.4rem;
   overflow: hidden;
   transition: max-height var(--slow) var(--ease-in-out), padding var(--slow) var(--ease-in-out);
-  color: #64748B;
+  color: #5a6055;
   font-size: 0.88rem;
   line-height: 1.6;
 }
@@ -508,7 +508,7 @@ nav a:hover::after { width: 100%; }
 
 /* ===== CTA ===== */
 .cta {
-  background: linear-gradient(135deg, #0D9488, #14B8A6);
+  background: linear-gradient(135deg, #50762b, #6a9a3a);
   color: #fff;
   text-align: center;
   padding: 4rem 5%;
@@ -531,7 +531,7 @@ nav a:hover::after { width: 100%; }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #134E4A;
+  background: #1f2920;
   color: rgba(255,255,255,0.8);
   padding: 3rem 5% 1.5rem;
 }
@@ -541,9 +541,9 @@ footer {
   gap: 2.5rem;
   margin-bottom: 2rem;
 }
-.footer-col h4 { color: #5EEAD4; font-weight: 700; margin-bottom: 1rem; font-size: 0.9rem; }
+.footer-col h4 { color: #8ab86a; font-weight: 700; margin-bottom: 1rem; font-size: 0.9rem; }
 .footer-col p, .footer-col a { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.6); text-decoration: none; display: block; transition: color var(--fast) var(--ease-out); }
-.footer-col a:hover { color: #5EEAD4; }
+.footer-col a:hover { color: #8ab86a; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
   padding-top: 1.5rem;
@@ -625,7 +625,7 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   background: #fff;
-  color: #134E4A;
+  color: #1f2920;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.82rem;
@@ -738,20 +738,20 @@ footer {
       <svg viewBox="0 0 200 240" fill="none">
         <defs>
           <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE8D0"/><stop offset="100%" stop-color="#F5D6B8"/></linearGradient>
-          <linearGradient id="ug" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0D9488"/></linearGradient>
-          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0D9488"/><stop offset="100%" stop-color="#0B6B62"/></linearGradient>
-          <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#94A3B8"/><stop offset="100%" stop-color="#64748B"/></linearGradient>
+          <linearGradient id="ug" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6a9a3a"/><stop offset="100%" stop-color="#50762b"/></linearGradient>
+          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#50762b"/><stop offset="100%" stop-color="#2d4a18"/></linearGradient>
+          <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7a8075"/><stop offset="100%" stop-color="#5a6055"/></linearGradient>
         </defs>
-        <ellipse cx="100" cy="234" rx="38" ry="5" fill="rgba(13,148,136,0.12)"/>
-        <rect x="80" y="203" width="12" height="24" rx="6" fill="#134E4A"/>
-        <rect x="108" y="203" width="12" height="24" rx="6" fill="#134E4A"/>
+        <ellipse cx="100" cy="234" rx="38" ry="5" fill="rgba(80,118,43,0.12)"/>
+        <rect x="80" y="203" width="12" height="24" rx="6" fill="#1f2920"/>
+        <rect x="108" y="203" width="12" height="24" rx="6" fill="#1f2920"/>
         <ellipse cx="86" cy="228" rx="11" ry="5.5" fill="#3D2B1F"/>
         <ellipse cx="114" cy="228" rx="11" ry="5.5" fill="#3D2B1F"/>
         <rect x="68" y="135" width="64" height="68" rx="18" fill="url(#ug)"/>
         <path d="M86 135 L100 150 L114 135" fill="#fff"/>
-        <rect x="68" y="192" width="64" height="5" rx="2.5" fill="#0B6B62"/>
+        <rect x="68" y="192" width="64" height="5" rx="2.5" fill="#2d4a18"/>
         <rect x="92" y="156" width="16" height="10" rx="3" fill="#fff"/>
-        <text x="100" y="163" font-family="Arial,sans-serif" font-size="4.5" font-weight="700" fill="#0D9488" text-anchor="middle">LOPES</text>
+        <text x="100" y="163" font-family="Arial,sans-serif" font-size="4.5" font-weight="700" fill="#50762b" text-anchor="middle">LOPES</text>
         <path d="M68 142 Q52 134 48 120 Q46 112 50 108" stroke="url(#ug)" stroke-width="11" stroke-linecap="round" fill="none"/>
         <circle cx="50" cy="108" r="7" fill="url(#sg)"/>
         <path d="M132 148 Q144 144 148 136" stroke="url(#ug)" stroke-width="11" stroke-linecap="round" fill="none"/>
@@ -759,19 +759,19 @@ footer {
         <g transform="translate(148,110) rotate(18)">
           <rect x="-4" y="-12" width="8" height="24" rx="3.5" fill="url(#gg)"/>
           <rect x="-3" y="-16" width="6" height="6" rx="2.5" fill="#F59E0B"/>
-          <circle cx="0" cy="-19" r="2.5" fill="#0D9488"/>
+          <circle cx="0" cy="-19" r="2.5" fill="#50762b"/>
         </g>
-        <circle cx="162" cy="89" r="2.5" fill="rgba(13,148,136,0.18)"/>
-        <circle cx="169" cy="83" r="2" fill="rgba(13,148,136,0.12)"/>
-        <circle cx="174" cy="78" r="1.5" fill="rgba(13,148,136,0.08)"/>
+        <circle cx="162" cy="89" r="2.5" fill="rgba(80,118,43,0.18)"/>
+        <circle cx="169" cy="83" r="2" fill="rgba(80,118,43,0.12)"/>
+        <circle cx="174" cy="78" r="1.5" fill="rgba(80,118,43,0.08)"/>
         <circle cx="100" cy="88" r="44" fill="url(#sg)"/>
         <ellipse cx="57" cy="90" rx="6" ry="9" fill="#E8C4A0"/>
         <ellipse cx="143" cy="90" rx="6" ry="9" fill="#E8C4A0"/>
         <path d="M64 74 Q66 54 75 48 Q82 44 100 42 Q118 44 125 48 Q134 54 136 74" fill="#4A4A4A"/>
         <path d="M64 72 Q64 48 100 42 Q136 48 136 72 Q134 78 126 80 Q110 83 100 83 Q90 83 74 80 Q66 78 64 72" fill="url(#cg)"/>
-        <path d="M100 82 Q126 82 142 76 Q148 74 145 80 Q138 87 118 89 Q100 89 100 83" fill="#0B6B62"/>
+        <path d="M100 82 Q126 82 142 76 Q148 74 145 80 Q138 87 118 89 Q100 89 100 83" fill="#2d4a18"/>
         <circle cx="100" cy="62" r="6.5" fill="#F59E0B"/>
-        <text x="100" y="65" font-family="Arial,sans-serif" font-size="6.5" font-weight="800" fill="#134E4A" text-anchor="middle">L</text>
+        <text x="100" y="65" font-family="Arial,sans-serif" font-size="6.5" font-weight="800" fill="#1f2920" text-anchor="middle">L</text>
         <ellipse cx="83" cy="84" rx="7.5" ry="8.5" fill="#fff"/>
         <ellipse cx="117" cy="84" rx="7.5" ry="8.5" fill="#fff"/>
         <circle cx="85" cy="84" r="4" fill="#2C1810"/>
@@ -804,25 +804,25 @@ footer {
   <p class="section-sub">Soluções completas para eliminar todo tipo de praga urbana com produtos certificados pela ANVISA e técnicas modernas.</p>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-5 4-9 9-9s9 4 9 9"/></svg></div>
+      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-5 4-9 9-9s9 4 9 9"/></svg></div>
       <h3>Dedetização</h3>
       <p>Baratas, formigas, aranhas, traças e pulgas. Eliminação total com gel e pulverização.</p>
       <span class="tag">ANVISA</span>
     </div>
     <div class="service-card">
-      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 013 3v1h3a3 3 0 013 3v1"/><path d="M3 10h12"/><path d="M3 6h12"/><circle cx="6" cy="14" r="4"/><circle cx="15" cy="17" r="5"/></svg></div>
+      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 013 3v1h3a3 3 0 013 3v1"/><path d="M3 10h12"/><path d="M3 6h12"/><circle cx="6" cy="14" r="4"/><circle cx="15" cy="17" r="5"/></svg></div>
       <h3>Desratização</h3>
       <p>Ratos, ratazanas e camundongos. Mapeamento de tocas e iscas de alta atratividade.</p>
       <span class="tag">24h</span>
     </div>
     <div class="service-card">
-      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V5a2 2 0 012-2h4a2 2 0 012 2v3"/><path d="M2 14h2"/><path d="M20 14h2"/></svg></div>
+      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V5a2 2 0 012-2h4a2 2 0 012 2v3"/><path d="M2 14h2"/><path d="M20 14h2"/></svg></div>
       <h3>Descupinização</h3>
       <p>Cupins de madeira seca e subterrâneos. Injeção química e barreira de solo.</p>
       <span class="tag">3 anos</span>
     </div>
     <div class="service-card">
-      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
       <h3>Sanitização</h3>
       <p>Desinfecção profunda de ambientes. Eliminação de vírus, bactérias e fungos.</p>
       <span class="tag">ANVISA</span>
@@ -857,22 +857,22 @@ footer {
   <p class="section-sub">Soluções personalizadas para cada tipo de ambiente com plano de ação específico.</p>
   <div class="seg-grid">
     <div class="seg-card">
-      <div class="seg-icon" style="background:#F0FDFA"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="seg-icon" style="background:#FBF5F2"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <h3>Residências</h3>
       <p>Proteção completa para sua família e pets. Aplicação sem cheiro.</p>
     </div>
     <div class="seg-card">
-      <div class="seg-icon" style="background:#F0FDFA"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/></svg></div>
+      <div class="seg-icon" style="background:#FBF5F2"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/></svg></div>
       <h3>Condomínios</h3>
       <p>CIP para áreas comuns, garagem e hall. Relatórios para o síndico.</p>
     </div>
     <div class="seg-card">
-      <div class="seg-icon" style="background:#F0FDFA"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
+      <div class="seg-icon" style="background:#FBF5F2"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
       <h3>Restaurantes</h3>
       <p>Laudos ANVISA e Vigilância. Aplicação sem contaminação.</p>
     </div>
     <div class="seg-card">
-      <div class="seg-icon" style="background:#F0FDFA"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+      <div class="seg-icon" style="background:#FBF5F2"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#50762b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
       <h3>Indústrias</h3>
       <p>Gestão Integrada de Pragas (MIP). Documentação para ISO.</p>
     </div>
@@ -925,7 +925,7 @@ footer {
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;color:#5EEAD4;display:flex;align-items:center;gap:0.5rem">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;color:#8ab86a;display:flex;align-items:center;gap:0.5rem">
         <img src="/images/imagens1.PNG" alt="Lopes Dedetizadora" style="height:36px;width:auto;display:block">
       </div>
       <p style="margin-top:0.8rem;font-size:0.82rem">Há mais de 60 anos protegendo empresas e famílias brasileiras com excelência, segurança e respeito ao meio ambiente.</p>
