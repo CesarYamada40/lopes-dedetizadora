@@ -139,9 +139,74 @@ nav a:hover::after { width: 100%; }
 .btn-wpp:active, .btn-primary:active, .btn-outline:active { transition-duration: var(--fast); transform: scale(0.97); }
 .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #134E4A; }
 
+/* ===== CAROUSEL ===== */
+.carousel {
+  flex-shrink: 0;
+  width: 340px; height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.carousel-dot.active { background: #fff; }
+
+/* ===== FLOATING MASCOT ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.mascot-float {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 130px; height: 160px;
+  z-index: 10;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+.mascot-float svg { width: 100%; height: 100%; }
+
+@media (max-width: 900px) {
+  .carousel { width: 240px; height: 270px; }
+  .mascot-float { width: 100px; height: 120px; bottom: -15px; right: -15px; }
+}
+
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #F0FDFA 0%, #fff 50%, #F0FDFA 100%);
+  background:
+    linear-gradient(135deg, rgba(15,118,110,0.88) 0%, rgba(13,148,136,0.82) 50%, rgba(15,118,110,0.88) 100%),
+    url('https://images.pexels.com/photos/19789837/pexels-photo-19789837.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1') center center / cover no-repeat;
   padding: 3rem 5% 4rem;
   display: flex;
   align-items: center;
@@ -156,7 +221,7 @@ nav a:hover::after { width: 100%; }
   top: -200px;
   right: -200px;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -166,7 +231,7 @@ nav a:hover::after { width: 100%; }
   bottom: -150px;
   left: -150px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(20,184,166,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -175,7 +240,7 @@ nav a:hover::after { width: 100%; }
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.78rem;
-  color: #0D9488;
+  color: #5EEAD4;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
@@ -189,43 +254,42 @@ nav a:hover::after { width: 100%; }
   height: 1px;
   max-width: 40px;
 }
-.hero-text .tagline::before { background: linear-gradient(90deg, transparent, #0D9488); }
-.hero-text .tagline::after { background: linear-gradient(90deg, #0D9488, transparent); }
+.hero-text .tagline::before { background: linear-gradient(90deg, transparent, #5EEAD4); }
+.hero-text .tagline::after { background: linear-gradient(90deg, #5EEAD4, transparent); }
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 2.6rem;
   line-height: 1.15;
-  color: #134E4A;
+  color: #fff;
   margin-bottom: 0.6rem;
 }
 .hero-text h1 .accent {
-  background: linear-gradient(135deg, #0D9488, #14B8A6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #5EEAD4;
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 .hero-sub {
   font-size: 1.05rem;
-  color: #64748B;
+  color: rgba(255,255,255,0.8);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 .hero-badges { display: flex; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; }
 .hero-badge {
-  background: #fff;
-  border: 1px solid #CCFBF1;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
   padding: 0.35rem 1rem;
   border-radius: 30px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #134E4A;
+  color: #fff;
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  box-shadow: 0 2px 8px rgba(13,148,136,0.04);
 }
-.hero-badge.gold { border-color: #FCD34D; background: #FFFBEB; }
+.hero-badge.gold { border-color: #FCD34D; background: rgba(252,211,77,0.15); }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
   background: linear-gradient(135deg, #0D9488, #0F766E);
@@ -243,6 +307,16 @@ nav a:hover::after { width: 100%; }
   cursor: pointer;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13,148,136,0.3); }
+.hero-actions .btn-primary {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+  animation: pulse-cta 2s ease-in-out infinite;
+}
+.hero-actions .btn-primary:hover { box-shadow: 0 8px 30px rgba(245,158,11,0.4); transform: translateY(-2px); }
+@keyframes pulse-cta {
+  0%, 100% { box-shadow: 0 4px 20px rgba(245,158,11,0.35); }
+  50% { box-shadow: 0 4px 35px rgba(245,158,11,0.5); }
+}
 .btn-outline {
   border: 2px solid #CCFBF1;
   color: #134E4A;
@@ -258,17 +332,6 @@ nav a:hover::after { width: 100%; }
   cursor: pointer;
 }
 .btn-outline:hover { border-color: #0D9488; color: #0D9488; }
-
-.hero-avatar {
-  flex-shrink: 0;
-  width: 300px; height: 350px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-.hero-avatar svg { width: 100%; height: 100%; filter: drop-shadow(0 10px 30px rgba(13,148,136,0.08)); }
 
 /* ===== TRUST ===== */
 .trust {
@@ -467,8 +530,12 @@ nav a:hover::after { width: 100%; }
   margin-bottom: 0.5rem;
 }
 .cta p { opacity: 0.9; margin-bottom: 2rem; font-size: 1.05rem; }
-.cta .btn-primary { background: #fff; color: #0D9488; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.cta .btn-primary:hover { background: #F0FDFA; }
+.cta .btn-primary {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+}
+.cta .btn-primary:hover { background: #D97706; box-shadow: 0 8px 30px rgba(245,158,11,0.4); }
 .cta .btn-outline { border-color: rgba(255,255,255,0.4); color: #fff; }
 .cta .btn-outline:hover { border-color: #fff; }
 
@@ -510,12 +577,13 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+  .carousel { width: 240px; height: 270px; }
+  .mascot-float { width: 100px; height: 120px; bottom: -15px; right: -15px; }
   .hero { flex-direction: column-reverse; text-align: center; padding: 2rem 5% 3rem; }
   .hero-text .tagline::before, .hero-text .tagline::after { max-width: 20px; }
   .hero-text h1 { font-size: 1.9rem; }
   .hero-badges { justify-content: center; }
   .hero-actions { justify-content: center; }
-  .hero-avatar { width: 200px; height: 240px; }
   .how-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   nav { display: none; }
@@ -610,73 +678,74 @@ footer {
       <a href="tel:5511999990000" class="btn-outline">📞 (11) 99999-0000</a>
     </div>
   </div>
-  <div class="hero-avatar">
-    <svg viewBox="0 0 340 380" fill="none">
-      <defs>
-        <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5D6B8"/><stop offset="100%" stop-color="#E8C4A0"/></linearGradient>
-        <linearGradient id="u" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0D9488"/><stop offset="100%" stop-color="#0F766E"/></linearGradient>
-        <linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0D9488"/><stop offset="100%" stop-color="#0B6B62"/></linearGradient>
-      </defs>
-      <ellipse cx="170" cy="370" rx="70" ry="8" fill="rgba(13,148,136,0.08)"/>
-      <rect x="120" y="145" width="50" height="85" rx="10" fill="url(#u)" opacity="0.6"/>
-      <rect x="128" y="153" width="34" height="69" rx="6" fill="rgba(255,255,255,0.08)"/>
-      <path d="M171 210 Q190 215 192 230 Q195 250 200 265" stroke="#134E4A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <rect x="140" y="285" width="26" height="58" rx="6" fill="#134E4A"/>
-      <rect x="174" y="285" width="26" height="58" rx="6" fill="#134E4A"/>
-      <rect x="135" y="338" width="36" height="18" rx="8" fill="#5C4033"/>
-      <rect x="169" y="338" width="36" height="18" rx="8" fill="#5C4033"/>
-      <rect x="135" y="334" width="36" height="8" rx="4" fill="#7A5C4A"/>
-      <rect x="169" y="334" width="36" height="8" rx="4" fill="#7A5C4A"/>
-      <rect x="134" y="168" width="76" height="120" rx="14" fill="url(#u)"/>
-      <rect x="134" y="274" width="76" height="10" rx="3" fill="#0B6B62"/>
-      <rect x="160" y="272" width="24" height="14" rx="4" fill="#F59E0B"/>
-      <path d="M150 168 L158 188 L182 188 L190 168 Z" fill="#fff" opacity="0.95"/>
-      <rect x="156" y="200" width="32" height="16" rx="4" fill="#fff"/>
-      <text x="172" y="211" font-family="Arial" font-size="6.5" font-weight="700" fill="#0D9488" text-anchor="middle">LOPES</text>
-      <rect x="156" y="220" width="20" height="14" rx="3" fill="rgba(255,255,255,0.1)"/>
-      <circle cx="172" cy="248" r="3.5" fill="#F59E0B"/>
-      <circle cx="172" cy="262" r="3.5" fill="#F59E0B"/>
-      <path d="M134 176 Q110 200 112 238 Q114 258 120 268" stroke="url(#u)" stroke-width="20" stroke-linecap="round" fill="none"/>
-      <circle cx="120" cy="268" r="11" fill="url(#s)"/>
-      <path d="M210 176 Q234 200 246 220 Q254 236 256 248" stroke="url(#u)" stroke-width="20" stroke-linecap="round" fill="none"/>
-      <circle cx="256" cy="250" r="11" fill="url(#s)"/>
-      <rect x="250" y="228" width="5" height="46" rx="2.5" fill="#A0A0A0" transform="rotate(-20, 252, 251)"/>
-      <rect x="251" y="223" width="7" height="12" rx="3" fill="#F59E0B" transform="rotate(-20, 254, 229)"/>
-      <rect x="254" y="218" width="3" height="7" rx="1.5" fill="#666" transform="rotate(-20, 255, 221)"/>
-      <circle cx="258" cy="216" r="3.5" fill="#0D9488"/>
-      <circle cx="270" cy="208" r="5" fill="rgba(13,148,136,0.12)"/>
-      <circle cx="280" cy="202" r="3.5" fill="rgba(13,148,136,0.08)"/>
-      <circle cx="288" cy="196" r="2.5" fill="rgba(13,148,136,0.06)"/>
-      <rect x="160" y="150" width="22" height="20" rx="6" fill="url(#s)"/>
-      <ellipse cx="172" cy="110" rx="46" ry="50" fill="url(#s)"/>
-      <ellipse cx="126" cy="113" rx="7" ry="10" fill="#E8C4A0"/>
-      <ellipse cx="218" cy="113" rx="7" ry="10" fill="#E8C4A0"/>
-      <path d="M128 98 Q132 68 152 60 Q157 56 162 58" stroke="#8899AA" stroke-width="5.5" fill="none" stroke-linecap="round"/>
-      <path d="M216 98 Q212 68 192 60 Q187 56 182 58" stroke="#8899AA" stroke-width="5.5" fill="none" stroke-linecap="round"/>
-      <path d="M132 78 Q132 53 172 48 Q212 53 212 78 Z" fill="url(#c)"/>
-      <path d="M132 78 Q132 83 160 86 Q172 87 184 86 Q212 83 212 78 Z" fill="#0B6B62"/>
-      <path d="M212 74 Q234 70 244 66 Q250 64 246 70 Q242 76 226 80 Q218 82 212 80 Z" fill="#0B6B62"/>
-      <circle cx="172" cy="66" r="7" fill="#F59E0B"/>
-      <text x="172" y="69" font-family="Arial" font-size="7" font-weight="700" fill="#134E4A" text-anchor="middle">L</text>
-      <ellipse cx="157" cy="106" rx="8" ry="7.5" fill="#fff"/>
-      <circle cx="159" cy="105" r="4.5" fill="#3D2B1F"/>
-      <circle cx="161" cy="103" r="1.8" fill="#fff"/>
-      <ellipse cx="187" cy="106" rx="8" ry="7.5" fill="#fff"/>
-      <circle cx="189" cy="105" r="4.5" fill="#3D2B1F"/>
-      <circle cx="191" cy="103" r="1.8" fill="#fff"/>
-      <path d="M146 100 Q154 96 164 98" stroke="#134E4A" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M180 98 Q190 96 198 100" stroke="#134E4A" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M172 108 Q176 118 172 122 Q168 118 172 108 Z" fill="#E0B898"/>
-      <path d="M148 128 Q152 124 158 126 Q164 128 172 128 Q180 128 186 126 Q192 124 196 128 Q200 132 196 136 Q190 140 182 138 Q172 136 162 138 Q154 140 148 136 Q144 132 148 128 Z" fill="#C0C8D0"/>
-      <path d="M150 128 Q154 125 160 127 Q166 129 172 129 Q178 129 184 127 Q190 125 194 128" stroke="#A0A8B0" stroke-width="1.5" fill="none"/>
-      <path d="M160 132 Q166 131 172 132 Q178 133 184 132" stroke="#A0A8B0" stroke-width="1" fill="none" opacity="0.5"/>
-      <path d="M160 140 Q166 148 172 148 Q178 148 184 140" stroke="#8B5E3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M162 140 Q166 144 172 144 Q178 144 182 140" fill="#D44A4A" opacity="0.5"/>
-      <ellipse cx="143" cy="120" rx="7" ry="4.5" fill="rgba(232,140,120,0.2)"/>
-      <ellipse cx="201" cy="120" rx="7" ry="4.5" fill="rgba(232,140,120,0.2)"/>
-      <circle cx="118" cy="248" r="6.5" fill="#F59E0B"/>
-      <circle cx="118" cy="248" r="4.5" fill="#fff"/>
-    </svg>
+  <div class="carousel" id="heroCarousel">
+    <div class="carousel-track" id="carouselTrack">
+      <img class="carousel-slide" src="https://images.pexels.com/photos/19789837/pexels-photo-19789837.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&dpr=1" alt="Dedetização profissional" loading="lazy">
+      <img class="carousel-slide" src="https://images.pexels.com/photos/4099264/pexels-photo-4099264.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&dpr=1" alt="Descupinização técnica" loading="lazy">
+      <img class="carousel-slide" src="https://images.pexels.com/photos/32055757/pexels-photo-32055757.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&dpr=1" alt="Fumigação industrial" loading="lazy">
+      <img class="carousel-slide" src="https://images.pexels.com/photos/19789841/pexels-photo-19789841.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&dpr=1" alt="Controle de pragas externo" loading="lazy">
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+      <button class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="mascot-float">
+      <svg viewBox="0 0 200 240" fill="none">
+        <defs>
+          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDE8D0"/><stop offset="100%" stop-color="#F5D6B8"/></linearGradient>
+          <linearGradient id="ug" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0D9488"/></linearGradient>
+          <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0D9488"/><stop offset="100%" stop-color="#0B6B62"/></linearGradient>
+          <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#94A3B8"/><stop offset="100%" stop-color="#64748B"/></linearGradient>
+        </defs>
+        <ellipse cx="100" cy="234" rx="38" ry="5" fill="rgba(13,148,136,0.12)"/>
+        <rect x="80" y="203" width="12" height="24" rx="6" fill="#134E4A"/>
+        <rect x="108" y="203" width="12" height="24" rx="6" fill="#134E4A"/>
+        <ellipse cx="86" cy="228" rx="11" ry="5.5" fill="#3D2B1F"/>
+        <ellipse cx="114" cy="228" rx="11" ry="5.5" fill="#3D2B1F"/>
+        <rect x="68" y="135" width="64" height="68" rx="18" fill="url(#ug)"/>
+        <path d="M86 135 L100 150 L114 135" fill="#fff"/>
+        <rect x="68" y="192" width="64" height="5" rx="2.5" fill="#0B6B62"/>
+        <rect x="92" y="156" width="16" height="10" rx="3" fill="#fff"/>
+        <text x="100" y="163" font-family="Arial,sans-serif" font-size="4.5" font-weight="700" fill="#0D9488" text-anchor="middle">LOPES</text>
+        <path d="M68 142 Q52 134 48 120 Q46 112 50 108" stroke="url(#ug)" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <circle cx="50" cy="108" r="7" fill="url(#sg)"/>
+        <path d="M132 148 Q144 144 148 136" stroke="url(#ug)" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <circle cx="148" cy="136" r="7" fill="url(#sg)"/>
+        <g transform="translate(148,110) rotate(18)">
+          <rect x="-4" y="-12" width="8" height="24" rx="3.5" fill="url(#gg)"/>
+          <rect x="-3" y="-16" width="6" height="6" rx="2.5" fill="#F59E0B"/>
+          <circle cx="0" cy="-19" r="2.5" fill="#0D9488"/>
+        </g>
+        <circle cx="162" cy="89" r="2.5" fill="rgba(13,148,136,0.18)"/>
+        <circle cx="169" cy="83" r="2" fill="rgba(13,148,136,0.12)"/>
+        <circle cx="174" cy="78" r="1.5" fill="rgba(13,148,136,0.08)"/>
+        <circle cx="100" cy="88" r="44" fill="url(#sg)"/>
+        <ellipse cx="57" cy="90" rx="6" ry="9" fill="#E8C4A0"/>
+        <ellipse cx="143" cy="90" rx="6" ry="9" fill="#E8C4A0"/>
+        <path d="M64 74 Q66 54 75 48 Q82 44 100 42 Q118 44 125 48 Q134 54 136 74" fill="#4A4A4A"/>
+        <path d="M64 72 Q64 48 100 42 Q136 48 136 72 Q134 78 126 80 Q110 83 100 83 Q90 83 74 80 Q66 78 64 72" fill="url(#cg)"/>
+        <path d="M100 82 Q126 82 142 76 Q148 74 145 80 Q138 87 118 89 Q100 89 100 83" fill="#0B6B62"/>
+        <circle cx="100" cy="62" r="6.5" fill="#F59E0B"/>
+        <text x="100" y="65" font-family="Arial,sans-serif" font-size="6.5" font-weight="800" fill="#134E4A" text-anchor="middle">L</text>
+        <ellipse cx="83" cy="84" rx="7.5" ry="8.5" fill="#fff"/>
+        <ellipse cx="117" cy="84" rx="7.5" ry="8.5" fill="#fff"/>
+        <circle cx="85" cy="84" r="4" fill="#2C1810"/>
+        <circle cx="119" cy="84" r="4" fill="#2C1810"/>
+        <circle cx="86" cy="82" r="1.8" fill="#fff"/>
+        <circle cx="120" cy="82" r="1.8" fill="#fff"/>
+        <path d="M76 74 Q83 70 90 74" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M110 74 Q117 70 124 74" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="100" cy="92" rx="2.8" ry="2.2" fill="#E8B88A"/>
+        <path d="M90 101 Q94 108 100 110 Q106 108 110 101" stroke="#C94A4A" stroke-width="1.8" fill="#D44A4A" stroke-linecap="round"/>
+        <ellipse cx="72" cy="94" rx="6" ry="3.5" fill="rgba(232,140,120,0.2)"/>
+        <ellipse cx="128" cy="94" rx="6" ry="3.5" fill="rgba(232,140,120,0.2)"/>
+        <path d="M83 101 Q92 106 100 103 Q108 106 117 101" stroke="#4A3828" stroke-width="3" fill="#5C4033" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M83 101 Q78 103 74 99" stroke="#5C4033" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M117 101 Q122 103 126 99" stroke="#5C4033" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -881,4 +950,28 @@ footer {
 </footer>
 
 </body>
+<script>
+(function(){
+  var track = document.getElementById('carouselTrack');
+  var dots = document.querySelectorAll('.carousel-dot');
+  if (!track || !dots.length) return;
+  var current = 0, total = dots.length, interval;
+  function goTo(i) {
+    if (i === current) return;
+    current = i;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d){ d.classList.remove('active'); });
+    dots[current].classList.add('active');
+  }
+  dots.forEach(function(dot){
+    dot.addEventListener('click', function(){
+      goTo(parseInt(this.getAttribute('data-index')));
+      clearInterval(interval);
+      interval = setInterval(next, 4000);
+    });
+  });
+  function next() { goTo((current + 1) % total); }
+  interval = setInterval(next, 4000);
+})();
+</script>
 </html>
